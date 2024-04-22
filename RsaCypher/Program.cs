@@ -28,7 +28,7 @@ namespace RsaCypher
             // Создаем ключи (Публичный и Приватный) фиксированной длины в 1024 бита
             var keys = GenerateKeys();
 
-            // Сообщение разбивается на блоки по 512 бит, для блочного шифрования.
+            // Сообщение разбивается на блоки по 32 символа, для блочного шифрования.
             // Каждый блок шифруется, кодируется в BASE64 и добавляется в билдер
             foreach (string originalChunk in SplitString(message, 32))
                 encryptedBuilder.Append(Convert.ToBase64String(EncryptString(originalChunk, keys.Public)));
